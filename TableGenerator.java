@@ -311,54 +311,38 @@ public class TableGenerator {
      * @param m - gets the ArrayList of MenuItems
      * @param price - gets the corresponding price of the said items (total price of the items)
      */
-    public static void printinvoice(ArrayList<MenuItems> m,ArrayList<Double> price) {
+    public static void printinvoice(ArrayList<String> m,ArrayList<Double> price) {
         TableGenerator tableGenerator = new TableGenerator();
-        System.out.println("----------------------------------------");
+ 
         List<String> headersList = new ArrayList<>(); 
         headersList.add("Index");
         headersList.add("Name");
         headersList.add("Quantity");
         headersList.add("Price");
         
-        
         List<List<String>> rowsList = new ArrayList<>();
-        //List<String> row = new ArrayList<>(); 
-        //List<MenuItems> m=mainthingy.geto();
         MenuItems t; 
         for (int i = 0; i < m.size() ; i++) {
+        	
         	List<String> row = new ArrayList<>(); 
-        	//t= MainMenu.searchByName(m.get(i).getName());
-        	t= MainMenuMgr.Menu.searchByName(m.get(i).getName());
+        	
+        	t= MainMenuMgr.Menu.searchByName( m.get(i) );
         	double one=t.getPrice();
         	int q=(int) (price.get(i)/one);
+        	
         	String index=String.valueOf(i+1);
-        	//System.out.println(ii);
-            String name=m.get(i).getName();
-            //System.out.println(s);
-            //row.add(row.get(i).getName());//UUID.randomUUID().toString());
+            String name=m.get(i);
             String quantity=String.valueOf(q);
-            //System.out.println(p);
-            //row.add(p);//UUID.randomUUID().toString());
             String p=String.valueOf(one);
-            //System.out.println(s1);
-            //String s2=m.get(i).getType();
+
             row.add(index);
             row.add(name);
             row.add(quantity);
-            row.add(p);//UUID.randomUUID().toString());
-            
-            //row.add("Test 4");//UUID.randomUUID().toString());
+            row.add(p);
 
             rowsList.add(row);
-        }
-        /*for(int i=0;i<2;i++)
-        {
-        	row.add("string");
-        	row.add("test");
-        	rowsList.add(row);
-        }*/
+        } 
 
         System.out.println(tableGenerator.generateTable(headersList, rowsList));
-        System.out.println("----------------------------------------");
     }
 }
