@@ -113,9 +113,9 @@ public class Reservation implements Serializable, Comparable<Reservation> {
 	 */
 	public void printReservation() {
 		System.out.println("Reservation Details: ");
-		System.out.println("Name:\t" + customer.getName());
-		System.out.println("Contact No.:\t" + customer.getContactNo());
-		System.out.println("Pax:\t" + pax);
+		System.out.println("\nName:\t\t\t\t" + customer.getName());
+		System.out.println("Contact No.:\t\t\t" + customer.getContactNo());
+		System.out.println("Pax:\t\t\t" + pax);
 		System.out.println("Time:\t" + timestamp.getTime());
 	}
 
