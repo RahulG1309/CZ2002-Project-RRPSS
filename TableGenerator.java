@@ -217,9 +217,7 @@ public class TableGenerator {
 		headersList.add("Name");
 		headersList.add("Price");
 		headersList.add("Description");
-		if (a != 0) {
-			a = 0;
-		}
+		
 		List<List<String>> rowsList = new ArrayList<>();
 		// List<String> row = new ArrayList<>();
 		// List<MenuItems> m=mainthingy.geto();
