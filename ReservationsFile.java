@@ -34,8 +34,8 @@ public class ReservationsFile {
 		} catch (FileNotFoundException E) {
 			System.out.println("File not found error");
 		} catch (IOException I) {
-			System.out.println("File not closed error//");
-			I.printStackTrace();
+			//System.out.println("File not closed error//");
+			//I.printStackTrace();
 		} catch (ClassNotFoundException C) {
 			System.out.println("Class not found exception");
 		}

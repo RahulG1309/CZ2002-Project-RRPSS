@@ -220,11 +220,15 @@ public class TableReservations implements Serializable {
 	 */
 	public void printTableDetails() {
 		System.out.println("TableNo : " + this.getTableNo() + "\t Capacity : " + this.getCapacity());
+		
 		Reservation[] temp = new Reservation[pq.size()];
 		pq.toArray(temp);
 		for (int i = 0; i < pq.size(); i++) {
 			temp[i].printReservation();
 		}
+		System.out.println("-------------------------------");
+
+
 	}
 
 	/**

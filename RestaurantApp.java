@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
  *         the ManagerClasses and facilitates the functioning of the Restaurant
  */
 public class RestaurantApp {
+
 	/**
 	 * Main App to run the program
 	 * @param args
@@ -18,14 +19,13 @@ public class RestaurantApp {
 	 * @throws ClassNotFoundException - Thrown when an application tries to load in a class through its string name but no definition for the class with the specified name could be found.
 	 * @throws IOException - Signals that an I/O exception of some sort has occurred. This class is the general class of exceptions produced by failed or interrupted I/O operations.
 	 */
-
 	public static void main(String args[]) throws FileNotFoundException, ClassNotFoundException, IOException {
 
-		//FileReader.readAllFiles();
-		MainMenuMgr.intiateMenu();
-		ReservationMgr.readAllReservations();
-		EmployeeMgr.readEmployees();
-		CustomerMgr.read();
+		FileReader.readAllFiles();
+//		MainMenuMgr.intiateMenu();
+//		ReservationMgr.readAllReservations();
+//		EmployeeMgr.readEmployees();
+//		CustomerMgr.read();
 		// Reading all files, modified
 		int year, month, day;
 
@@ -33,7 +33,8 @@ public class RestaurantApp {
 		int choice, selection;
 		do {
 			System.out.println("-------------------------------");
-			System.out.println("Welcome to Gandhi Restaurant!\n");
+			System.out.println("Welcome to Gandhi Restaurant!");
+			System.out.println("Working hours : Mon-Sun 24 hours\n");
 			System.out.println("1. Menu Items");
 			System.out.println("-------------------------------");
 			System.out.println("2. Promotional Set Packages");
@@ -219,7 +220,9 @@ public class RestaurantApp {
 					System.out.println("1. Create a Reservation");
 					System.out.println("2. Check a Reservation");
 					System.out.println("3. Remove a Reservation");
-					System.out.println("4. Exit Sub-Menu");
+					System.out.println("4. Walk In");
+					System.out.println("5. View Reservations");
+					System.out.println("6. Exit Sub-Menu");
 					System.out.println("-------------------------------");
 					System.out.println("Enter your choice");
 					selection = sc.nextInt();
@@ -279,14 +282,37 @@ public class RestaurantApp {
 						}
 						break;
 					case 4:
-						selection = 5;
+						System.out.println("Enter the Customer details for the Reservation");
+						System.out.println("Enter Name : ");
+						String name1 = sc.next();
+						System.out.println("Enter Contact Number: ");
+						long number2 = sc.nextLong();
+						System.out.println("Enter number of pax : ");
+						int pax1 = sc.nextInt();
+						
+						ReservationMgr.walkIn(name1, number2, pax1);
+					
+					case 5:
+						System.out.println("Enter the Table No to see reservations of that table or");
+						System.out.println("input -1 to see for all tables");
+						System.out.println("TableNo : ");
+						int t = sc.nextInt();
+						if(t==-1) {
+							ReservationMgr.tabledets();
+						}
+						else {
+							ReservationMgr.tabledets(t);
+						}
+
+					case 6:
+						selection = 7;
 						break;
 					default:
 						System.out.println("Invalid Choice, exiting Sub-Menu.");
-						selection = 5;
+						selection = 7;
 						// break;
 					}
-				} while (selection < 5 && selection > 0);
+				} while (selection < 7 && selection > 0);
 				break;
 			case 5:
 //				Calendar cal = Calendar.getInstance();

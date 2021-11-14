@@ -42,8 +42,12 @@ public class TableReservationsCollection {
 			Tables[i].printTableDetails();
 			if (Tables[i].checkAvailability(time)) {
 				System.out.println("Status: Available");
+				System.out.println("-------------------------------");
+
 			} else {
 				System.out.println("Status: Not Available");
+				System.out.println("-------------------------------");
+
 			}
 		}
 	}
@@ -191,6 +195,20 @@ public class TableReservationsCollection {
 		for (TableReservations temp : Tables) {
 			temp.printTableDetails();
 		}
+	}
+	
+	/**
+	 * Prints table details for specific tableNo
+	 * @param  int tableno
+	 */
+	public void tabledets(int tableno) {
+		for (int i = 0; i < Tables.length; i++) {
+			if (Tables[i].getTableNo() == tableno) {
+				Tables[i].printTableDetails();
+			}
+		}
+		System.out.println("Error: Table Not Found");
+
 	}
 	
 	/**
