@@ -127,6 +127,9 @@ public class ReservationMgr {
 		T.readAllReservations();
 	}
 
+	/**
+	 * Writes all the Reservations from the file
+	 */
 	public static void writeAllReservations() {
 		T.writeAllReservations();
 	}
