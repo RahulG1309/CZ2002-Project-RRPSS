@@ -308,17 +308,13 @@ public class MainMenuMgr implements Serializable {
 		p1.addPackageItem(Menu.searchByIndex(0));
 		p1.addPackageItem(Menu.searchByIndex(1));
 		p1.addPackageItem(Menu.searchByIndex(2));
-
-		// p1.print();
 		Package p2 = new Package("Package 2", 14.0, "MC+M");
 		p2.addPackageItem(Menu.searchByIndex(2));
 		p2.addPackageItem(Menu.searchByIndex(3));
 		p2.addPackageItem(Menu.searchByIndex(4));
-		Package p3 = new Package("Package 2", 14.0, "MC+M");
+		Package p3 = new Package("Package 3", 12.0, "MC+M");
 		p3.addPackageItem(Menu.searchByIndex(2));
 		p3.addPackageItem(Menu.searchByIndex(3));
-		p3.addPackageItem(Menu.searchByIndex(4));
-		// p2.print();
 		Menu.addPackage(p1);
 		Menu.addPackage(p2);
 		Menu.addPackage(p3);
