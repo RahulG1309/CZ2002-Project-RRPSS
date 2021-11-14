@@ -11,13 +11,14 @@ import java.util.Calendar;
  */
 public class ReservationMgr {
 	private static TableReservationsCollection T = new TableReservationsCollection();
-	
+
 	public ReservationMgr() {
 		super();
 	}
 
 	/**
 	 * Checks the availability of the tables at a given time.
+	 * 
 	 * @param time of reservation
 	 */
 	public static void checkTableAvailability(Calendar time) {
@@ -43,7 +44,7 @@ public class ReservationMgr {
 				customer = CustomerMgr.createCustomer(name, contactNo, false);
 			}
 			Reservation res = new Reservation(pax, customer, arrivalTime);
-			T.makeReservation(res,tableIndex);
+			T.makeReservation(res, tableIndex);
 			System.out.println("Success! Your reservation  has been created successfully.");
 			res.printReservation();
 		} else {
@@ -118,17 +119,18 @@ public class ReservationMgr {
 		T.checkExpiry(); // Removes all expired reservations
 		T.tabledets();
 	}
-	
-	public static void readAllReservations()
-	{
+
+	/**
+	 * Reads all the Reservations from the file
+	 */
+	public static void readAllReservations() {
 		T.readAllReservations();
 	}
-	
-	public static void writeAllReservations()
-	{
+
+	public static void writeAllReservations() {
 		T.writeAllReservations();
 	}
-	
+
 	/**
 	 * Removes a reservation from the record of reservations and the file.
 	 * 
