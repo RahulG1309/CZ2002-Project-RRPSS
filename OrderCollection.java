@@ -120,12 +120,18 @@ public class OrderCollection {
 //				System.out.println(i + 1 + ". " + OrderList.get(orderNo).getItems().get(i).getName() + "\t\t\t\t"
 //						+ OrderList.get(orderNo).getItems().get(i).getPrice());
 			}
-			int count = 1;
+//			int count = 1;
+			ArrayList <String> items = new ArrayList <String>();
+			ArrayList <Double> prices = new ArrayList <Double>();
 			for (Map.Entry<String, Integer> mapItem : map.entrySet()) {
-				System.out.println(count++ + ". " + mapItem.getKey() + " x" + mapItem.getValue() + "\t\t\t"
-						+ (MainMenuMgr.Menu.searchByName(mapItem.getKey()).getPrice() * mapItem.getValue()));
+//				System.out.println(count++ + ". " + mapItem.getKey() + " x" + mapItem.getValue() + "\t\t\t"
+//						+ (MainMenuMgr.Menu.searchByName(mapItem.getKey()).getPrice() * mapItem.getValue()));
+				items.add(mapItem.getKey());
+				prices.add((MainMenuMgr.Menu.searchByName(mapItem.getKey()).getPrice() * mapItem.getValue()));
+				
 			}
-			System.out.println();
+			TableGenerator.printInvoice(items, prices);
+			System.out.println("----------------------------------------\n");
 		}
 	}
 

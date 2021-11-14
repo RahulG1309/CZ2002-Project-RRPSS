@@ -103,7 +103,7 @@ public class TableReservationsCollection {
 	 */
 	public void checkExpiry() {
 		for (int i = 0; i < Tables.length; i++) {
-			if(Tables[i].getPq() == null || Tables[i].getPq().isEmpty())
+			if(Tables[i] == null || Tables[i].getPq() == null || Tables[i].getPq().isEmpty())
 			{
 				continue;
 			}

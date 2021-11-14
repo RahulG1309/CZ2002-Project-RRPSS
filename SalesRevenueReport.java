@@ -71,12 +71,16 @@ public class SalesRevenueReport {
 			}
 		}
 		System.out.println("Sales Revenue Report for " + startDate.getTime() + " to " + endDate.getTime());
-		int count = 1;
+		ArrayList<String> items = new ArrayList<String>();
+		ArrayList<Double> prices = new ArrayList<Double>();
 		for (Map.Entry<String, Integer> mapItem : map.entrySet()) {
-			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+//			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+			items.add(mapItem.getKey());
+			prices.add((MainMenuMgr.Menu.searchByName(mapItem.getKey()).getPrice() * mapItem.getValue()));
 		}
+		TableGenerator.printInvoice(items, prices);
 		System.out.println("Total Revenue\t\t" + totalRevenue);
-		System.out.println();
+		System.out.println("----------------------------------------");
 	}
 
 	/**
@@ -111,12 +115,16 @@ public class SalesRevenueReport {
 			}
 		}
 		System.out.println("Sales Revenue Report for " + startDate.getTime() + " to " + endDate.getTime());
-		int count = 1;
+		ArrayList<String> items = new ArrayList<String>();
+		ArrayList<Double> prices = new ArrayList<Double>();
 		for (Map.Entry<String, Integer> mapItem : map.entrySet()) {
-			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+//			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+			items.add(mapItem.getKey());
+			prices.add((MainMenuMgr.Menu.searchByName(mapItem.getKey()).getPrice() * mapItem.getValue()));
 		}
+		TableGenerator.printInvoice(items, prices);
 		System.out.println("Total Revenue\t\t" + totalRevenue);
-		System.out.println();
+		System.out.println("----------------------------------------");
 	}
 
 	/**
@@ -150,12 +158,16 @@ public class SalesRevenueReport {
 			}
 		}
 		System.out.println("Sales Revenue Report for " + startDate.getTime() + " to " + endDate.getTime());
-		int count = 1;
+		ArrayList<String> items = new ArrayList<String>();
+		ArrayList<Double> prices = new ArrayList<Double>();
 		for (Map.Entry<String, Integer> mapItem : map.entrySet()) {
-			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+//			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+			items.add(mapItem.getKey());
+			prices.add((MainMenuMgr.Menu.searchByName(mapItem.getKey()).getPrice() * mapItem.getValue()));
 		}
+		TableGenerator.printInvoice(items, prices);
 		System.out.println("Total Revenue\t\t" + totalRevenue);
-		System.out.println();
+		System.out.println("----------------------------------------");
 	}
 
 	/**
@@ -182,11 +194,15 @@ public class SalesRevenueReport {
 			}
 		}
 		System.out.println("Complete Sales Revenue Report");
-		int count = 1;
+		ArrayList<String> items = new ArrayList<String>();
+		ArrayList<Double> prices = new ArrayList<Double>();
 		for (Map.Entry<String, Integer> mapItem : map.entrySet()) {
-			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+//			System.out.println(count++ + ". " + mapItem.getKey() + "\t\t" + mapItem.getValue());
+			items.add(mapItem.getKey());
+			prices.add((MainMenuMgr.Menu.searchByName(mapItem.getKey()).getPrice() * mapItem.getValue()));
 		}
+		TableGenerator.printInvoice(items, prices);
 		System.out.println("Total Revenue\t\t" + totalRevenue);
-		System.out.println();
+		System.out.println("----------------------------------------");
 	}
 }
